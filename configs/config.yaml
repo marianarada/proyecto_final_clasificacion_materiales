@@ -1,0 +1,47 @@
+﻿project:
+  name: "clasificacion-materiales"
+  random_state: 42
+data:
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  files:
+    maestro: "Maestro_verdad_simulacion.xlsx"
+    ariba: "Ariba_eventos_RFP.xlsx"
+    me2m: "ME2M_historico_compras.xlsx"
+  sheets:
+    maestro_materiales: "Maestro_materiales"
+    taxonomia: "Taxonomia"
+target:
+  column: "Familia (codigo)"
+  n_classes: 8
+features:
+  text: ["Texto breve","Texto largo"]
+  categorical: ["UM","Marca"]
+  numeric: ["Precio base (USD)","Filas ME2M","Items en eventos Ariba"]
+  noisy_label: "Grupo de articulos SAP actual"
+tfidf:
+  max_features: 5000
+  ngram_range: [1, 2]
+  min_df: 2
+  sublinear_tf: true
+split:
+  test_size: 0.20
+  val_size: 0.10
+  random_state: 42
+  stratify: true
+models:
+  logistic_regression:
+    enabled: true
+    params: {C: 1.0, max_iter: 1000, class_weight: "balanced"}
+  random_forest:
+    enabled: true
+    params: {n_estimators: 200, class_weight: "balanced", n_jobs: -1}
+  xgboost:
+    enabled: true
+    params: {n_estimators: 200, max_depth: 6, learning_rate: 0.1, eval_metric: "mlogloss"}
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "clasificacion-materiales-familia"
+  registered_model_name: "clasificacion-materiales"
+  champion_alias: "champion"
