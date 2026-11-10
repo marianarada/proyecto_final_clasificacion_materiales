@@ -1,0 +1,19 @@
+{
+  "champion": "RandomForest",
+  "f1_macro_val": 1.0,
+  "f1_macro_test": 0.9958,
+  "all_models": {
+    "LogisticRegression": {
+      "f1_val": 0.996,
+      "f1_weighted": 0.996
+    },
+    "RandomForest": {
+      "f1_val": 1.0,
+      "f1_weighted": 1.0
+    },
+    "XGBoost": {
+      "f1_val": 0.9879,
+      "f1_weighted": 0.9879
+    }
+  }
+}

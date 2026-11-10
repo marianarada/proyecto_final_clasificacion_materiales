@@ -1,4 +1,4 @@
-﻿"""Entrenamiento sin MLflow - compatible con restricciones AppLocker."""
+"""Entrenamiento sin MLflow - compatible con restricciones AppLocker."""
 from __future__ import annotations
 
 import json
@@ -84,6 +84,8 @@ def run_training(config=None):
 
     print("Cargando datos...")
     df = load_maestro(config)
+    from sklearn.preprocessing import LabelEncoder
+    df['familia_cod'] = LabelEncoder().fit_transform(df['familia_cod'])
 
     print("\nGenerando splits...")
     df_train, df_val, df_test, y_train, y_val, y_test = make_splits(
