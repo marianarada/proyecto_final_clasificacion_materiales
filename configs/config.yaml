@@ -2,7 +2,7 @@
   name: "clasificacion-materiales"
   random_state: 42
 data:
-  raw_dir: "data/raw"
+  raw_dir: "Data"
   interim_dir: "data/interim"
   processed_dir: "data/processed"
   files:
@@ -45,3 +45,4 @@ mlflow:
   experiment_name: "clasificacion-materiales-familia"
   registered_model_name: "clasificacion-materiales"
   champion_alias: "champion"
+

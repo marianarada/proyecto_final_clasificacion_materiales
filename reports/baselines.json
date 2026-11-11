@@ -1,14 +1,14 @@
 {
   "f1_macro_test": {
     "Azar (clase mas frecuente)": 0.0315,
-    "Agrupacion SAP actual (grupo_sap)": 0.7244,
-    "Sin texto (precio, marca, UM)": 0.7289,
-    "Solo texto_breve (TF-IDF + LogReg)": 0.994,
-    "Modelo del proyecto (RandomForest)": 0.9958
+    "Agrupacion SAP actual (grupo_sap)": 0.7215,
+    "Sin texto (precio, marca, UM)": 0.737,
+    "Solo texto_breve (TF-IDF + LogReg)": 0.9979,
+    "Modelo del proyecto (RandomForest)": 0.9893
   },
   "test_sin_duplicados": {
-    "filas": 436,
-    "duplicados_quitados": 64,
-    "f1_macro": 0.9953
+    "filas": 451,
+    "duplicados_quitados": 49,
+    "f1_macro": 0.9885
   }
 }

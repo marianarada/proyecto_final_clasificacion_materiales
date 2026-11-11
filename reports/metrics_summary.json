@@ -1,19 +1,35 @@
 {
   "champion": "RandomForest",
-  "f1_macro_val": 1.0,
-  "f1_macro_test": 0.9958,
+  "f1_macro_val": 0.9881,
+  "f1_macro_test": 0.9893,
+  "classes": [
+    "ELE",
+    "EPP",
+    "HER",
+    "INS",
+    "LUB",
+    "MEC",
+    "QUI",
+    "TUV"
+  ],
+  "split": {
+    "train": 1750,
+    "val": 250,
+    "test": 500,
+    "agrupado_por": "grupo_id"
+  },
   "all_models": {
     "LogisticRegression": {
-      "f1_val": 0.996,
-      "f1_weighted": 0.996
+      "f1_val": 0.9838,
+      "f1_weighted": 0.9839
     },
     "RandomForest": {
-      "f1_val": 1.0,
-      "f1_weighted": 1.0
+      "f1_val": 0.9881,
+      "f1_weighted": 0.988
     },
     "XGBoost": {
-      "f1_val": 0.9879,
-      "f1_weighted": 0.9879
+      "f1_val": 0.9833,
+      "f1_weighted": 0.984
     }
   }
 }
